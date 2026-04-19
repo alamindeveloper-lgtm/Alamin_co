@@ -4,17 +4,25 @@
   <title>Alamin | Web Developer</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #0f172a;
       color: white;
       font-family: Arial;
       margin: 0;
+      border-top: 6px solid #38bdf8;
     }
 
     header {
-      text-align: center;
-      padding: 20px;
+      position: sticky;
+      top: 0;
       background: #111827;
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
     }
 
     nav a {
@@ -24,9 +32,13 @@
       font-weight: bold;
     }
 
+    nav a:hover {
+      color: white;
+    }
+
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 70px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
@@ -34,38 +46,78 @@
       color: #38bdf8;
     }
 
-    .card {
-      background: #1e293b;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-    }
-
-    .whatsapp-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 12px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      color: #94a3b8;
-    }
-
+    /* HERO */
     #hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 130px 20px;
+    }
+
+    #hero h1 {
+      font-size: 45px;
     }
 
     #hero p {
       color: #94a3b8;
+      font-size: 18px;
+    }
+
+    /* CARDS */
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    /* BUTTON */
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .whatsapp-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* FLOATING WHATSAPP */
+    .float-wa {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 14px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+      color: #94a3b8;
+      border-top: 1px solid #1e293b;
     }
   </style>
 </head>
@@ -85,7 +137,7 @@
 
 <section id="hero">
   <h1>Hi, I'm Alamin</h1>
-  <p>Web Developer | Building modern websites</p>
+  <p>Web Developer | I build modern and responsive websites</p>
 
   <a class="whatsapp-btn"
      href="https://wa.me/2349121293089"
@@ -96,33 +148,54 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I am learning web development and building real projects.</p>
+  <div class="card">
+    I am a web developer focused on building modern, clean and responsive websites.
+    I enjoy learning and improving my coding skills every day.
+  </div>
 </section>
 
 <section id="skills">
   <h2>Skills</h2>
-  <div class="card">HTML</div>
-  <div class="card">CSS</div>
-  <div class="card">JavaScript (learning)</div>
+  <div class="grid">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript (learning)</div>
+  </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-  <div class="card">Portfolio Website</div>
+  <div class="grid">
+    <div class="card">Portfolio Website</div>
+    <div class="card">Landing Page (coming soon)</div>
+    <div class="card">Web App (coming soon)</div>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <a class="whatsapp-btn"
-     href="https://wa.me/2349121293089"
-     target="_blank">
-     Chat on WhatsApp
-  </a>
+  <div class="card">
+    Click below to contact me directly:
+    <br><br>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/2349121293089"
+       target="_blank">
+       Chat on WhatsApp
+    </a>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Alamin</p>
+  <p>© 2026 Alamin | Web Developer</p>
 </footer>
+
+<!-- FLOATING BUTTON -->
+<a class="float-wa"
+   href="https://wa.me/2349121293089"
+   target="_blank">
+   WhatsApp
+</a>
 
 </body>
 </html>
